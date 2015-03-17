@@ -10,3 +10,22 @@
 ```
 
 Grocery list mobile app developed with Ionic, Angular and Cordova
+
+## Installation
+
+1. Run `npm install`
+2. Run `bower install`
+
+### Run the app in the browser:
+
+```
+ionic serve
+```
+
+### Run the app in the iOS simulator:
+
+```
+ionic platform add ios
+ionic build ios
+ionic emulate ios
+```
