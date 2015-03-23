@@ -29,43 +29,44 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
-
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
-      }
-    }
-  })
-
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('app.new', {
+      url: "/new",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/new.html"
         }
       }
     })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+    .state('app.lists', {
+      url: "/lists",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/lists.html",
+          controller: "ListsCtrl"
+        }
       }
-    }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+    })
+
+    .state('app.list', {
+      url: "/lists/:listId",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/list.html",
+          controller: "ListCtrl"
+        }
+      }
+    })
+
+    .state('app.disconnect', {
+      url: "/disconnect",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/disconnect.html"
+        }
+      }
+    });
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/lists');
 });
